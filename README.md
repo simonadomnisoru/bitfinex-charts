@@ -20,6 +20,8 @@ Thanks for taking the time to do our frontend coding test. The challenge has two
 
 - Make it look nice - it should be properly styled and the page should adapt to different screen sizes.
 
+- All the components you create have to be properly unit-tested (jest is already ready to use).
+
 ## Implementation
 
 - The page should be built with React and also include a redux store for storing the fetched prices along the time and used for populating the chart.
