@@ -24,6 +24,8 @@ Thanks for taking the time to do our frontend coding test. The challenge has two
 
 - The page should be built with React and should also include a redux store for storing the fetched prices along the time.
 
+- The code has to be written in EcmaScript 6
+
 - To get around the CORS issue when fetching the data you can use CORS anywhere (https://cors-anywhere.herokuapp.com/)
 
 - Use a charting library of your own choosing.
