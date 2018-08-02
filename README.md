@@ -36,12 +36,12 @@ Thanks for taking the time to do our frontend coding test. The challenge has two
 
 ## Submission Guidelines
 
-* Please submit your program by sending a zip file to your Outlyer contact.
+* Please submit your application as a repository on github.
 
-* The zip file should be named {yourname}.zip, and should itself contain the frontend-test project folder (and the server project folder in case you implemented the proxy server) with your submission.
+* Your repository should contain the frontend-test project folder (and the server project folder in case you implemented the proxy server) with your submission.
 
-* The zip file should contain the [FOLLOWUP.md](./FOLLOWUP.md) file with answers to the follow-up questions.
+* Please submit an explanation document for your work addressing all the questions contained in the [FOLLOWUP.md](./FOLLOWUP.md) file. This should be no more than 1000 words
 
-* The zip file should **not** include the `node_modules` folder.
+* The respository should **not** include the `node_modules` folder.
 
 * Please let your Outlyer contact know when you've uploaded your solution.
