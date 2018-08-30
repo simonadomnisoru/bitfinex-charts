@@ -6,8 +6,8 @@ const getBtcGbp = (callback) => {
         .then((res) => {
             return res.json();
         })
-        .then((data) => {
-            callback(null, data);
+        .then((response) => {
+            callback(null, response);
         })
         .catch((error) => {
             callback(error);
