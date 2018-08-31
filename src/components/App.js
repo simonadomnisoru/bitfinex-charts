@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api from "../api/api.js";
+import api from '../api/api.js';
 import { Line } from 'react-chartjs-2';
 require('../styles/App.css');
 
@@ -7,14 +7,14 @@ const createDataSet = () => {
     return {
         labels: [],
         datasets: [{
-            label: "Bitcoin",
+            label: 'Bitcoin',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             fill: false,
             data: [],
         }]
-    }
-}
+    };
+};
 
 const processDataSet = (dataSet, price) => {
     let newDataSet = { ...dataSet };
@@ -23,7 +23,7 @@ const processDataSet = (dataSet, price) => {
     newDataSet.datasets[0].data = [...dataSet.datasets[0].data, price];
 
     return newDataSet;
-}
+};
 
 class App extends Component {
     constructor(props) {
@@ -55,7 +55,7 @@ class App extends Component {
                 pointClass: `point ${isNegative}-point`,
                 differenceLastValue: differenceLastValue,
                 dataSet: processDataSet(this.state.dataSet, price)
-            })
+            });
         }
         // Todo error check
     };
