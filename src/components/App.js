@@ -63,7 +63,7 @@ class App extends Component {
     render() {
         if (this.state && this.state.arrowClass) {
             return (
-                <div className="App">
+                <div>
                     <div className={this.state.arrowClass}>
                         <div className={this.state.lineClass}></div>
                         <div className={this.state.pointClass}></div>
