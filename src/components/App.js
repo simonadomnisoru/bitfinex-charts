@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import api from '../api/api.js';
 import { Line } from 'react-chartjs-2';
-require('../styles/App.css');
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 const createDataSet = () => {
     return {
@@ -50,9 +51,8 @@ class App extends Component {
             this.lastPrice = price;
 
             this.setState({
-                arrowClass: `arrow ${isNegative}`,
-                lineClass: `line ${isNegative}-line`,
-                pointClass: `point ${isNegative}-point`,
+				faArrowIcon: isNegative ? faArrowUp : faArrowDown,
+				faArrowColor: isNegative ? { color:'green'} : { color:'red'},
                 differenceLastValue: differenceLastValue,
                 dataSet: processDataSet(this.state.dataSet, price)
             });
@@ -61,13 +61,10 @@ class App extends Component {
     };
 
     render() {
-        if (this.state && this.state.arrowClass) {
+        if (this.state && this.state.faArrowIcon) {
             return (
                 <div>
-                    <div className={this.state.arrowClass}>
-                        <div className={this.state.lineClass}></div>
-                        <div className={this.state.pointClass}></div>
-                    </div>
+					<FontAwesomeIcon icon={this.state.faArrowIcon} style={this.state.faArrowColor}/>
                     <div>{this.state.differenceLastValue}%</div>
                     <Line
                         data={this.state.dataSet}
