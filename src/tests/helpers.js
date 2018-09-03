@@ -20,13 +20,11 @@ const expectedDataSet = {
         data: ['5261.9']
     }]
 };
-const expectedHtml = '<div><div class="arrow up"><div class="line up-line"></div><div class="point up-point"></div></div><div>0%</div><canvas height="50" width="100"></canvas></div>';
 
 const helpers = {
     mockedUrl: mockedUrl,
     mokedApiData: mokedApiData,
-    expectedDataSet: expectedDataSet,
-    expectedHtml: expectedHtml
+    expectedDataSet: expectedDataSet
 };
 
 export default helpers;

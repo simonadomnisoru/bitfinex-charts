@@ -12,7 +12,7 @@ const initialState = {
             data: [],
         }]
     }
-}
+};
 
 const store = createStore(reducer, initialState);
 export default store;

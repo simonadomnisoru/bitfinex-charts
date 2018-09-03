@@ -17,7 +17,7 @@ const getBtcGbp = () => {
         .catch((error) => {
             store.dispatch({
                 type: actions.getBtcGbp,
-                response: error
+                error: error
             });
         });
 };
