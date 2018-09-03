@@ -16,7 +16,7 @@
 
 ### Q) How long, in hours, did you spend on the test?
 
-   - I spent 4 hours on the test
+I spent 5 hours on the test
 
 ### Q) If you had more time, what further improvements or new features would you add?
 
@@ -28,7 +28,12 @@
 
 ### Q) Which parts are you most proud of? And why?
 
+I am most proud of the redux reducer (/src/state/reducer.js). I think is simple, logic and maintainable. 
+
 ### Q) Which parts did you spend the most time with? What did you find most difficult?
+
+The part I spend most time with was the unit tests. I have much more experience developing End to End tests using Selenium WebDriver.
 
 ### Q) How did you find the test overall? If you have any suggestions on how we can improve the test, we'd love to hear them.
 
+I find the test fun and interesting to develop. 
