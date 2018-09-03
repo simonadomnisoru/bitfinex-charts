@@ -13,7 +13,7 @@ const mockedUrl = 'https://cors-anywhere.herokuapp.com/https://api.bitfinex.com/
 const expectedDataSet = {
     labels: [''],
     datasets: [{
-        label: 'Bitcoin',
+        label: 'btc gbp last price',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
         fill: false,

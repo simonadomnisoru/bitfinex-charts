@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Adapter from 'enzyme-adapter-react-16';
 import fetchMock from 'fetch-mock';
-import {configure, shallow} from 'enzyme';
-import {expect} from 'chai';
+import { configure, shallow } from 'enzyme';
+import { expect } from 'chai';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import App from '../../components/App';
 import helpers from '../helpers';
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -28,9 +29,8 @@ describe('App components works correctly', () => {
         process.nextTick(() => {
             const state = wrapper.instance().state;
 
-            expect(state.arrowClass).to.equal('arrow up');
-            expect(state.lineClass).to.equal('line up-line');
-            expect(state.pointClass).to.equal('point up-point');
+            expect(state.faArrowColor).to.eql({ color: 'green' });
+            expect(state.faArrowIcon).to.eql(faArrowUp);
             expect(state.differenceLastValue).to.equal(0);
             expect(state.dataSet).to.eql(helpers.expectedDataSet);
             done();

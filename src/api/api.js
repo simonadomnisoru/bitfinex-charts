@@ -1,16 +1,24 @@
+import actions from '../state/actions';
+import store from '../state/store';
 const urlCors = 'https://cors-anywhere.herokuapp.com/';
 const bitfinexUrl = 'https://api.bitfinex.com/v1/pubticker/btcgbp';
 
-const getBtcGbp = (callback) => {
+const getBtcGbp = () => {
     fetch(`${urlCors}${bitfinexUrl}`)
         .then((res) => {
             return res.json();
         })
         .then((response) => {
-            callback(null, response);
+            store.dispatch({
+                type: actions.getBtcGbp,
+                response: response
+            });
         })
         .catch((error) => {
-            callback(error);
+            store.dispatch({
+                type: actions.getBtcGbp,
+                response: error
+            });
         });
 };
 
