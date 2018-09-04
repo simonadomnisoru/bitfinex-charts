@@ -4,9 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import fetchMock from 'fetch-mock';
 import {configure, shallow} from 'enzyme';
 import {expect} from 'chai';
-import {faArrowUp, faArrowDown} from '@fortawesome/free-solid-svg-icons';
 import {Line} from 'react-chartjs-2';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import App from '../../components/App';
 import helpers from '../helpers';
 
@@ -18,46 +16,23 @@ it('renders without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
 });
 
+
 describe('App components works correctly', () => {
-    beforeEach(() => {
-        fetchMock.mock(helpers.mockedUrl, helpers.mokedApiData);
-    });
     afterEach(() => {
         fetchMock.restore();
     });
 
-    it('should set the state correctly', (done) => {
-        const wrapper = shallow(<App />);
-        process.nextTick(() => {
-            const state = wrapper.instance().state;
-
-            expect(state.faArrowClass).to.equal('arrowGreen');
-            expect(state.faArrowIcon).to.eql(faArrowUp);
-            expect(state.differenceLastValue).to.equal(0);
-            expect(state.dataSet).to.eql(helpers.expectedDataSet);
-            done();
-        });
-    });
-
-    it('should render the html correctly', (done) => {
-        const wrapper = shallow(<App />);
-        expect(wrapper.html()).to.equal(null);
-        process.nextTick(() => {
-            const chart = wrapper.find(Line);
-            const arrow = wrapper.find(FontAwesomeIcon);
-
-            expect(wrapper.html()).to.not.equal(null);
-            expect(wrapper.find('.app')).to.have.lengthOf(1);
-            expect(wrapper.find('.arrowContainer')).to.have.lengthOf(1);
-            expect(wrapper.find('.arrowGreen')).to.have.lengthOf(1);
-
-            expect(arrow).to.have.lengthOf(1);
-            expect(arrow.props().icon.iconName).to.equal('arrow-up');
-            expect(chart).to.have.lengthOf(1);
-            expect(chart.props().width).to.equal(100);
-            expect(chart.props().height).to.equal(50);
-            expect(chart.props().options).to.eql({ maintainAspectRatio: true });
-            done();
+    const cycles = Array.apply(null, Array(3));
+    cycles.forEach(function (el, index) {
+        it('should set the state and render correctly when it recives prices for the API', (next) => {
+            fetchMock.mock(helpers.mockedUrl, helpers.mokedApiData[index]);
+            const wrapper = shallow(<App />);
+            process.nextTick((expectedData) => {
+                expect(wrapper.instance().state).to.deep.include(expectedData);
+                expect(wrapper.find(Line).props()).to.include({width: 100, height: 50});
+                expect(wrapper.find(Line).props().data).to.eql(expectedData.dataSet);
+                next();
+            }, helpers.expectedData[index]);
         });
     });
 });
