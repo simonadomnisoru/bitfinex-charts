@@ -29,8 +29,7 @@ describe('App components works correctly', () => {
             const wrapper = shallow(<App />);
             process.nextTick((expectedData) => {
                 expect(wrapper.instance().state).to.deep.include(expectedData);
-                expect(wrapper.find(Line).props()).to.include({width: 100, height: 50});
-                expect(wrapper.find(Line).props().data).to.eql(expectedData.dataSet);
+                expect(wrapper.find(Line).props()).to.deep.include({width: 100, height: 50, data: expectedData.dataSet});
                 next();
             }, helpers.expectedData[index]);
         });

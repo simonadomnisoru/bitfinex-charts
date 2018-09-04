@@ -62,11 +62,24 @@ const expectedData = [
         lastPrice: '5262.9'
     }
 ];
+const reducerInitialState = {
+    dataSet: {
+        labels: [],
+        datasets: [{
+            label: 'btc gbp last price',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            fill: false,
+            data: [],
+        }]
+    }
+};
 
 const helpers = {
     mockedUrl: mockedUrl,
     mokedApiData: mokedApiData,
-    expectedData: expectedData
+    expectedData: expectedData,
+    reducerInitialState: reducerInitialState
 };
 
 export default helpers;
