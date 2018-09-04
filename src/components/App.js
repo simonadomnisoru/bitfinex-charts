@@ -1,8 +1,8 @@
 import React from 'react';
 import api from '../api/api.js';
-import {Line} from 'react-chartjs-2';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowUp, faArrowDown} from '@fortawesome/free-solid-svg-icons';
+import { Line } from 'react-chartjs-2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import '../style/app.css';
 import store from '../state/store';
 class App extends React.PureComponent {
@@ -34,11 +34,11 @@ class App extends React.PureComponent {
         if (this.state && this.state.faArrowIcon) {
             return (
                 <div className="app">
-                    <div className="arrowContainer">
+                    <strong className="arrowContainer">Difference between the last 30 seconds
                         <FontAwesomeIcon icon={this.state.faArrowIcon} className={this.state.faArrowClass} />
-                        <span>{this.state.differenceLastValue}%</span>
-                    </div>
-                    <Line className="chartBitCoin"
+                        {this.state.differenceLastValue}%
+                    </strong>
+                    <Line
                         data={this.state.dataSet}
                         width={100}
                         height={50}

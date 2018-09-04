@@ -5,6 +5,8 @@ import fetchMock from 'fetch-mock';
 import {configure, shallow} from 'enzyme';
 import {expect} from 'chai';
 import {faArrowUp, faArrowDown} from '@fortawesome/free-solid-svg-icons';
+import {Line} from 'react-chartjs-2';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import App from '../../components/App';
 import helpers from '../helpers';
 
@@ -36,15 +38,25 @@ describe('App components works correctly', () => {
             done();
         });
     });
+
     it('should render the html correctly', (done) => {
         const wrapper = shallow(<App />);
         expect(wrapper.html()).to.equal(null);
         process.nextTick(() => {
+            const chart = wrapper.find(Line);
+            const arrow = wrapper.find(FontAwesomeIcon);
+
             expect(wrapper.html()).to.not.equal(null);
             expect(wrapper.find('.app')).to.have.lengthOf(1);
             expect(wrapper.find('.arrowContainer')).to.have.lengthOf(1);
             expect(wrapper.find('.arrowGreen')).to.have.lengthOf(1);
-            expect(wrapper.find('.chartBitCoin')).to.have.lengthOf(1);
+
+            expect(arrow).to.have.lengthOf(1);
+            expect(arrow.props().icon.iconName).to.equal('arrow-up');
+            expect(chart).to.have.lengthOf(1);
+            expect(chart.props().width).to.equal(100);
+            expect(chart.props().height).to.equal(50);
+            expect(chart.props().options).to.eql({ maintainAspectRatio: true });
             done();
         });
     });
