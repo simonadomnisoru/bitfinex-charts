@@ -13,7 +13,7 @@ A line chart with the latest Bitcoin pounds values.
    - for eslint check: npm run linter
 
 ## Demo
-![demo](https://user-images.githubusercontent.com/6817073/45036829-cd714600-b05d-11e8-9f8a-a876ad893ef7.PNG)
+![demo](https://user-images.githubusercontent.com/6817073/45080217-b3367700-b0f4-11e8-9c8b-82ad8b879699.png)
 
 ## Libraries used for development
    - [Redux](https://redux.js.org/) used to manage the state of the project and to simulate the backend
