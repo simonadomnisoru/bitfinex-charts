@@ -19,7 +19,7 @@ class App extends React.PureComponent {
             this.setState({
                 faArrowIcon: store.getState().isNegative ? faArrowDown : faArrowUp,
                 faArrowClass: store.getState().isNegative ? 'arrowRed' : 'arrowGreen',
-                differenceLastValue: store.getState().differenceLastValue,
+                differenceLastValue: store.getState().differenceLastValue.toFixed(4),
                 lastPrice: store.getState().lastPrice,
                 dataSet: store.getState().dataSet
             });

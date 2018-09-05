@@ -16,14 +16,13 @@ it('renders without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
 });
 
-
-describe('App components works correctly', () => {
+describe('App component works correctly', () => {
     afterEach(() => {
         fetchMock.restore();
     });
 
     const cycles = Array.apply(null, Array(3));
-    cycles.forEach(function (el, index) {
+    cycles.forEach((el, index) => {
         it('should set the state and render correctly when it recives prices for the API', (next) => {
             fetchMock.mock(helpers.mockedUrl, helpers.mokedApiData[index]);
             const wrapper = shallow(<App />);

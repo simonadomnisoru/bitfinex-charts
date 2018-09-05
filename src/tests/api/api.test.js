@@ -11,7 +11,7 @@ describe('Api calls are working', () => {
         fetchMock.restore();
     });
     it('should get the price', () => {
-        api(function (error, response) {
+        api((error, response) => {
             expect(error).to.equal(null);
             expect(response).to.eql(helpers.mokedApiData);
         });

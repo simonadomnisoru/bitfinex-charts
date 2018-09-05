@@ -19,6 +19,7 @@ A line chart with the latest Bitcoin pounds values.
    - [Redux](https://redux.js.org/) used to manage the state of the project and to simulate the backend
    - [React Chart.js](https://github.com/jerairrest/react-chartjs-2) React wrapper for Chart.js 2
    - [Chart.js](https://github.com/chartjs/Chart.js) HTML5 Charts using the canvas element
+   - [Fort Awesome](https://fontawesome.com/) icon set and toolkit used for the trend arrow
 
 ## Libraries used for testing
    - [fetch-mock](https://github.com/wheresrhys/fetch-mock) mock http requests made using fetch

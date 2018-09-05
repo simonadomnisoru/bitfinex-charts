@@ -16,7 +16,7 @@ const expectedData = [
     {
         faArrowClass: 'arrowGreen',
         faArrowIcon: faArrowUp,
-        differenceLastValue: 0,
+        differenceLastValue: '0.0000',
         dataSet: {
             labels: [''],
             datasets: [{
@@ -32,7 +32,7 @@ const expectedData = [
     {
         faArrowClass: 'arrowRed',
         faArrowIcon: faArrowDown,
-        differenceLastValue: -1,
+        differenceLastValue: '-1.0000',
         dataSet: {
             labels: ['', ''],
             datasets: [{
@@ -48,7 +48,7 @@ const expectedData = [
     {
         faArrowClass: 'arrowGreen',
         faArrowIcon: faArrowUp,
-        differenceLastValue: 2,
+        differenceLastValue: '2.0000',
         dataSet: {
             labels: ['', '', ''],
             datasets: [{

@@ -11,10 +11,14 @@
 
 .arrowRed {
 	color: red;
-	font-size: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 .arrowGreen {
 	color: green;
-	font-size: 20px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
 }
